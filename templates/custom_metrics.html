@@ -1,0 +1,65 @@
+<!-- templates/custom_metrics.html -->
+{% extends '_base.html' %}
+
+{% block title %}Metrics{% endblock title %}
+
+{% block content %}
+    <h1>Metrics</h1>
+
+    <!-- panel -->
+    <div class="uk-width-1-1@l">
+        <div class="uk-card uk-card-default uk-card-small uk-card-hover">
+
+            <div class="uk-card-header">
+                <div class="uk-grid uk-grid-small">
+                    <div class="uk-width-auto"><h4>Custom Metrics</h4></div>
+                </div>
+            </div>
+
+            <div class="uk-card-body">
+                <p>Simple custom metrics counters. </p>
+
+                <form method="POST">
+
+                    <table class="uk-table uk-table-middle uk-table-divider">
+                        <thead>
+                        <tr>
+                            <th class="uk-width-small">Custom Metric</th>
+                            <th>Description</th>
+                            <th>Value</th>
+                            <th>Execute</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Page Counter</td>
+                            <td>A simple counter that increments by one each time the page is refreshed. <br>Prometheus
+                                metrics name is <code>custom_page_counter_total</code>.
+                            </td>
+                            <td>{{ current_page_counter }}</td>
+                            <td>
+
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>Button Click Counter</td>
+                            <td>A simple counter that increments by one each time the button it clicked. <br>Prometheus
+                                metrics name is <code>custom_click_counter_total</code>. <br>When the button is clicked the
+                                POST action redirects back to this page, thus the page hit counter also increments.
+                            </td>
+                            <td>{{ current_click_counter }}</td>
+                            <td>
+                                <button class="uk-button uk-button-default" type="submit" name='action'
+                                        value="click_counter">Increment
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /panel -->
+
+{% endblock content %}

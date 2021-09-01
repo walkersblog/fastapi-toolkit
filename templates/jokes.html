@@ -1,0 +1,30 @@
+<!-- templates/custom_metrics.html -->
+{% extends '_base.html' %}
+
+{% block title %}Metrics{% endblock title %}
+
+{% block content %}
+    <h1>Jokes Demo</h1>
+
+    <!-- panel -->
+    <div class="uk-width-1-1@l">
+        <div class="uk-card uk-card-default uk-card-small uk-card-hover">
+
+            <div class="uk-card-header">
+                <div class="uk-grid uk-grid-small">
+                    <div class="uk-width-auto"><h4>Returns five jokes using async from an external API</h4></div>
+                </div>
+            </div>
+
+            <div class="uk-card-body">
+                <p>Demo using https://official-joke-api.appspot.com/random_joke to return five jokes, using async.</p>
+                {% for result in results %}
+                <p><strong>{{ result.setup }}</strong> {{ result.punchline }}</p>
+                {% endfor %}
+                <p><strong>Page rendered in: </strong>{{ duration }}</p>
+            </div>
+        </div>
+    </div>
+    <!-- /panel -->
+
+{% endblock content %}

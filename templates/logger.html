@@ -1,0 +1,75 @@
+<!-- templates/home.html -->
+{% extends '_base.html' %}
+
+{% block title %}Logging{% endblock title %}
+
+{% block content %}
+<h1>Logger</h1>
+<!-- panel -->
+<div class="uk-width-1-1@l">
+    <div class="uk-card uk-card-default uk-card-small uk-card-hover">
+        <div class="uk-card-header">
+            <div class="uk-grid uk-grid-small">
+                <div class="uk-width-auto"><h4>On Demand log entries</h4></div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+            <form class="uk-form" method="POST">
+
+                <table class="uk-table uk-table-middle uk-table-divider">
+                    <thead>
+                    <tr>
+                        <th class="uk-width-small">Name</th>
+                        <th>Description</th>
+                        <th>Execute</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Dummy 500</td>
+                        <td>Write a dummy error response code 500 to application logs, standard out.
+                        </td>
+
+                        <td>
+                            <button class="uk-button uk-button-default" type="submit" name='action'
+                                    value="logger_one">Log
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Dummy Credit Card Number</td>
+                        <td>Write a dummy credit card number to application logs, standard out.
+                        </td>
+
+                        <td>
+                            <button class="uk-button uk-button-default" type="submit" name='action'
+                                    value="logger_two">Log
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Custom String</td>
+                        <td>Log any custom string: &nbsp
+                            <div class="uk-form-row">
+                            <input class="uk-form-large uk-form-width-large" type="text" name='custom_string_input' value='Hello World!'>
+                            </div>
+                        </td>
+
+
+                        <td>
+                            <button class="uk-button uk-button-default" type="submit" name='action'
+                                    value="custom_string">Log
+                            </button>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </form>
+        </div>
+    </div>
+</div>
+<!-- /panel -->
+{% endblock content %}

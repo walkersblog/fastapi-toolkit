@@ -1,0 +1,183 @@
+<!-- templates/_base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Toolkit{% endblock title %}</title>
+    <link rel="icon" type="image/png" href="static/favicon.ico"/>
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="static/css/uikit.css">
+    <link rel="stylesheet" type="text/css" href="static/css/dashboard.css">
+</head>
+<body>
+
+<!--HEADER-->
+<header id="top-head" class="uk-position-fixed">
+    <div class="uk-container uk-container-expand uk-background-primary">
+        <nav class="uk-navbar uk-light" data-uk-navbar="mode:click; duration: 250">
+            <div class="uk-navbar-left">
+
+
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li><a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"
+                           title="Offcanvas" data-uk-tooltip></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--/HEADER-->
+<!-- LEFT BAR -->
+<aside id="left-col" class="uk-light uk-visible@m">
+
+    <div class="left-content-box  content-box-dark">
+        <h4 class="uk-text-center uk-margin-remove-vertical text-light">Toolkit</h4>
+
+        <div class="uk-position-relative uk-text-center uk-display-block">
+
+
+        </div>
+    </div>
+
+    <div class="left-nav-wrap">
+        <ul class="uk-nav uk-nav-default uk-nav-parent-icon" data-uk-nav>
+            <li class="uk-nav-header">ACTIONS</li>
+            <li>
+                <a href="/">
+                    <span data-uk-icon="icon: home" class="uk-margin-small-right"></span>Home
+                </a>
+            </li>
+            <li>
+                <a href="api/motd" target="_blank">
+                    <span data-uk-icon="icon: forward" class="uk-margin-small-right"></span>MOTD
+                </a>
+            </li>
+            <li class="uk-nav-header">DEMOS</li>
+            <li>
+                <a href="/async_sleep">
+                    <span data-uk-icon="icon: bolt" class="uk-margin-small-right"></span>async sleep demo
+                </a>
+            </li>
+            <li>
+                <a href="/sync_sleep">
+                    <span data-uk-icon="icon: bolt" class="uk-margin-small-right"></span>sync sleep demo
+                </a>
+            </li>
+            <li>
+                <a href="/jokes">
+                    <span data-uk-icon="icon: bolt" class="uk-margin-small-right"></span>async jokes demo
+                </a>
+            </li>
+            <li class="uk-nav-header">METRICS</li>
+            <li>
+                <a href="/metrics" target="_blank">
+                    <span data-uk-icon="icon: forward" class="uk-margin-small-right"></span>Prometheus Metrics
+                </a>
+            </li>
+            <li>
+                <a href="/custom_metrics">
+                    <span data-uk-icon="icon: list" class="uk-margin-small-right"></span>Custom Metrics
+                </a>
+            </li>
+            <li class="uk-nav-header">LOGGING</li>
+            <li>
+                <a href="/logger">
+                    <span data-uk-icon="icon: pull" class="uk-margin-small-right"></span>Logging
+                </a>
+            </li>
+            <li class="uk-nav-header">FASTAPI DOCS</li>
+            <li>
+                <a href="/docs" target="_blank">
+                    <span data-uk-icon="icon: forward" class="uk-margin-small-right"></span>Docs
+                </a>
+            </li>
+
+
+        </ul>
+
+
+    </div>
+
+</aside>
+<!-- /LEFT BAR -->
+
+
+<!-- CONTENT -->
+<div id="content" data-uk-height-viewport="expand: true">
+    <div class="uk-container uk-container-expand">
+
+        {% block content %}
+        {% endblock content %}
+
+    </div>
+    <footer class="uk-section uk-section-small uk-text-center">
+        <hr>
+        <p class="uk-text-small uk-text-center">Copyright © 2021 FastAPI Toolkit</p>
+    </footer>
+
+</div>
+<!-- /CONTENT -->
+<!-- OFFCANVAS -->
+<div id="offcanvas-nav" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
+        <button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
+        <ul class="uk-nav uk-nav-default">
+            <li class="uk-nav-header">Navigation</li>
+            <li><a href="/"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: home"></span>
+                Home</a></li>
+            <li><a href="api/motd" target="_blank">
+                <span data-uk-icon="icon: forward" class="uk-margin-small-right"></span>MOTD
+            </a></li>
+            <li class="uk-nav-divider"></li>
+            <li>
+                <a href="/async_sleep">
+                    <span data-uk-icon="icon: bolt" class="uk-margin-small-right"></span>async sleep demo
+                </a>
+            </li>
+            <li>
+                <a href="/sync_sleep">
+                    <span data-uk-icon="icon: bolt" class="uk-margin-small-right"></span>sync sleep demo
+                </a>
+            </li>
+            <li>
+                <a href="/jokes">
+                    <span data-uk-icon="icon: bolt" class="uk-margin-small-right"></span>async jokes demo
+                </a>
+            </li>
+            <li class="uk-nav-divider"></li>
+            <li>
+                <a href="/metrics" target="_blank">
+                    <span data-uk-icon="icon: forward" class="uk-margin-small-right"></span>Prometheus Metrics
+                </a>
+            </li>
+            <li>
+                <a href="/custom_metrics">
+                    <span data-uk-icon="icon: list" class="uk-margin-small-right"></span>Custom Metrics
+                </a>
+            </li>
+            <li class="uk-nav-divider"></li>
+            <li>
+                <a href="/logger">
+                    <span data-uk-icon="icon: pull" class="uk-margin-small-right"></span>Logging
+                </a>
+            </li>
+            <li class="uk-nav-divider"></li>
+            <li>
+                <a href="/docs" target="_blank">
+                    <span data-uk-icon="icon: forward" class="uk-margin-small-right"></span>Docs
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<!-- /OFFCANVAS -->
+
+<!-- JavaScript -->
+<script src="static/js/uikit.js"></script>
+<script src="static/js/uikit-icons.js"></script>
+</body>
+</html>
