@@ -72,3 +72,30 @@ Run the container:
 ```
 podman run --name app-container --pod app-pod -d walkersblog.net/fast-api-toolkit:latest
 ```
+
+## OpenShift
+
+Get client tools:
+
+```
+wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
+sudo tar -xvf openshift-client-linux.tar.gz -C /usr/local/bin
+oc version
+```
+
+Log into the OpenShift:
+
+```
+oc login -u richard -p <PASS> https://api.cluster.lab.home:6443
+```
+
+The log in to the OpenShift registry with Podman:
+
+```
+podman login -u richard -p $(oc whoami -t) --tls-verify=false default-route-openshift-image-registry.apps.cluster.lab.home
+```
+
+
+
+
+
