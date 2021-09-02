@@ -95,6 +95,29 @@ The log in to the OpenShift registry with Podman:
 podman login -u richard -p $(oc whoami -t) --tls-verify=false default-route-openshift-image-registry.apps.cluster.lab.home
 ```
 
+Create new project:
+
+```
+oc new-project fastapi
+```
+
+Create new image stream:
+
+```
+oc create is toolkit
+```
+
+Tag your local image with the OpenSHift registry/imagestream/image:version:
+
+```
+podman tag walkersblog.net/fast-api-toolkit:latest default-route-openshift-image-registry.apps.cluster.lab.home/toolkit/fast-api-toolkit:latest
+```
+
+Push the image:
+
+```
+podman push --tls-verify=false walkersblog.net/fast-api-toolkit:latest default-route-openshift-image-registry.apps.cluster.lab.home/toolkit/fast-api-toolkit:latest
+```
 
 
 
