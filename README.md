@@ -40,3 +40,9 @@ Upgrade `pip` and install the project requirements:
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
+
+Run the application:
+
+```
+python main.py
+```
