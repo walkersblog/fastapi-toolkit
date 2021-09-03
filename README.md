@@ -119,6 +119,12 @@ Push the image:
 podman push --tls-verify=false default-route-openshift-image-registry.apps.cluster.lab.home/fastapi/fast-api-toolkit:latest
 ```
 
+Expose a route:
+
+```
+oc expose svc/fast-api-toolkit
+oc get routes
+```  
 
 
 
