@@ -107,16 +107,16 @@ Create new image stream:
 oc create is toolkit
 ```
 
-Tag your local image with the OpenSHift registry/imagestream/image:version:
+Tag your local image with the OpenSHift <REGISTRY>/<PROJECT>/<IMAGE_STREAM>:<VERSION>
 
 ```
-podman tag walkersblog.net/fast-api-toolkit:latest default-route-openshift-image-registry.apps.cluster.lab.home/toolkit/fast-api-toolkit:latest
+podman tag walkersblog.net/fast-api-toolkit:latest default-route-openshift-image-registry.apps.cluster.lab.home/fastapi/fast-api-toolkit:latest
 ```
 
 Push the image:
 
 ```
-podman push --tls-verify=false walkersblog.net/fast-api-toolkit:latest default-route-openshift-image-registry.apps.cluster.lab.home:443/toolkit/fast-api-toolkit:latest
+podman push --tls-verify=false default-route-openshift-image-registry.apps.cluster.lab.home/fastapi/fast-api-toolkit:latest
 ```
 
 
